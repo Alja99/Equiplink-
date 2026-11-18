@@ -1,0 +1,23 @@
+import { useState } from "react";
+import { ArrowRight, Menu, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import { navigation } from "../../data/navigation.js";
+
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  return (
+    <header className="app-header">
+      <NavLink className="app-logo" to="/" aria-label="EquipLink home" onClick={() => setMenuOpen(false)}>
+        <span className="app-logo-mark"><ArrowRight size={21} /></span>
+        <span className="app-logo-copy"><strong>Equip<span>Link</span></strong><small>HEAVY LOGISTICS &amp; TRADE</small></span>
+      </NavLink>
+      <button className="app-menu" type="button" aria-label="Toggle navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
+        {menuOpen ? <X size={20} /> : <Menu size={20} />}
+      </button>
+      <nav className={`app-nav${menuOpen ? " app-nav-open" : ""}`} aria-label="Main navigation">
+        {navigation.map((item) => <NavLink key={item.to} to={item.to} end={item.to === "/"} onClick={() => setMenuOpen(false)}>{item.label}</NavLink>)}
+        <NavLink className="app-nav-cta" to="/contact" onClick={() => setMenuOpen(false)}>Request a service <ArrowRight size={14} /></NavLink>
+      </nav>
+    </header>
+  );
+}

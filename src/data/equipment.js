@@ -1,0 +1,38 @@
+export const equipment = [
+  {
+    id: "cat-336-excavator",
+    name: "Caterpillar 336 Excavator",
+    category: "Excavators",
+    location: "Monrovia Depot",
+    pricePerDay: 450,
+    specs: ["36,000 kg", "311 hp", "Operator included"],
+    image: "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&w=960&q=85",
+  },
+  {
+    id: "volvo-a40g-hauler",
+    name: "Volvo A40G Hauler",
+    category: "Haulers",
+    location: "Buchanan Industrial Hub",
+    pricePerDay: 650,
+    specs: ["39,000 kg payload", "469 hp", "6×6 drive"],
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=960&q=85",
+  },
+  {
+    id: "komatsu-d65-dozer",
+    name: "Komatsu D65 Bulldozer",
+    category: "Bulldozers",
+    location: "Gbarnga Staging Post",
+    pricePerDay: 550,
+    specs: ["22,000 kg", "217 hp", "Track drive"],
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=960&q=85",
+  },
+  {
+    id: "jcb-3cx-backhoe",
+    name: "JCB 3CX Backhoe",
+    category: "Backhoes",
+    location: "Harbel Depot",
+    pricePerDay: 300,
+    specs: ["8,000 kg", "92 hp", "Multi-purpose"],
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=960&q=85",
+  },
+];

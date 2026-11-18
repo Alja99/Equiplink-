@@ -1,0 +1,351 @@
+.consultancy-page {
+  --consultancy-bg: #0b1118;
+  --consultancy-panel: #111922;
+  --consultancy-raised: #161f29;
+  --consultancy-border: #2d3743;
+  --consultancy-text: #edf1f4;
+  --consultancy-muted: #9aa6b2;
+  --consultancy-amber: #f59e0b;
+  --consultancy-green: #10b981;
+  margin: 0;
+  color: var(--consultancy-text);
+  background: var(--consultancy-bg);
+}
+
+.consultancy-page *,
+.consultancy-page *::before,
+.consultancy-page *::after { box-sizing: border-box; }
+.consultancy-page button,
+.consultancy-page input,
+.consultancy-page select,
+.consultancy-page textarea { font: inherit; }
+.consultancy-page button,
+.consultancy-page a { -webkit-tap-highlight-color: transparent; }
+.consultancy-page button:focus-visible,
+.consultancy-page a:focus-visible,
+.consultancy-page input:focus-visible,
+.consultancy-page select:focus-visible,
+.consultancy-page textarea:focus-visible { outline: 2px solid var(--consultancy-amber); outline-offset: 3px; }
+.consultancy-page img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.consultancy-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .75fr);
+  align-items: center;
+  gap: clamp(35px, 6vw, 88px);
+  max-width: 1440px;
+  min-height: 570px;
+  margin: 0 auto;
+  padding: 66px 6%;
+  background: radial-gradient(ellipse at 79% 40%, #18232d 0, #0b1118 54%);
+}
+.consultancy-hero-copy { max-width: 710px; }
+.consultancy-accreditation,
+.consultancy-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  color: #a0acb7;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.05px;
+}
+.consultancy-accreditation { width: fit-content; padding: 8px 10px; color: #9de7c6; border: 1px solid #28644b; background: #10251c; }
+.consultancy-accreditation i,
+.consultancy-location-status i { width: 6px; height: 6px; border-radius: 50%; background: var(--consultancy-green); box-shadow: 0 0 9px #10b98180; }
+.consultancy-hero h1 {
+  margin: 19px 0 15px;
+  font: 700 clamp(38px, 4.5vw, 59px)/1.07 "Manrope", sans-serif;
+  letter-spacing: -2.35px;
+}
+.consultancy-hero h1 em,
+.consultancy-section-heading h2 em,
+.consultancy-roadmap-heading h2 em,
+.consultancy-integration h2 em,
+.consultancy-intake h2 em { color: var(--consultancy-amber); font-family: Georgia, serif; font-weight: 400; }
+.consultancy-hero-description { max-width: 635px; margin: 0; color: #aab5bf; font-size: 12px; line-height: 1.85; }
+.consultancy-hero-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 23px; }
+.consultancy-button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 13px;
+  border: 1px solid transparent;
+  font-size: 9px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.consultancy-button-amber { color: #101316 !important; background: var(--consultancy-amber); }
+.consultancy-button-amber:hover { background: #d97706; }
+.consultancy-button-outline { color: #dce2e7; border-color: #3a4651; background: #121a23; }
+.consultancy-button-outline:hover { border-color: #71808c; background: #18212a; }
+.consultancy-trust-stats { display: flex; flex-wrap: wrap; gap: 23px; margin-top: 26px; }
+.consultancy-trust-stats > div { display: flex; align-items: center; gap: 8px; }
+.consultancy-trust-stats > div > svg { color: var(--consultancy-amber); }
+.consultancy-trust-stats span { display: grid; gap: 3px; }
+.consultancy-trust-stats strong { font: 700 14px "Manrope", sans-serif; }
+.consultancy-trust-stats small { color: #84919d; font-size: 7px; letter-spacing: .55px; }
+
+.consultancy-field-unit { overflow: hidden; border: 1px solid #34414d; background: #111922; box-shadow: 0 18px 50px #0003; }
+.consultancy-field-photo { position: relative; height: 200px; overflow: hidden; background: #202b34; }
+.consultancy-field-photo::after { position: absolute; inset: 20% 0 0; background: linear-gradient(0deg, #091019e8, transparent); content: ""; }
+.consultancy-field-photo img { filter: saturate(.62) contrast(1.05); }
+.consultancy-field-photo > div { position: absolute; z-index: 1; right: 14px; bottom: 13px; left: 14px; display: grid; gap: 5px; }
+.consultancy-field-photo > div span { display: flex; align-items: center; gap: 6px; color: #c1cbd2; font-size: 7px; letter-spacing: .8px; }
+.consultancy-field-photo > div span i { width: 6px; height: 6px; border-radius: 50%; background: var(--consultancy-green); }
+.consultancy-field-photo > div strong { font: 600 15px "Manrope", sans-serif; }
+.consultancy-telemetry { padding: 12px 14px 5px; }
+.consultancy-telemetry-heading { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; padding-bottom: 10px; color: #aeb9c2; border-bottom: 1px solid #2b3641; font-size: 8px; font-weight: 700; letter-spacing: .65px; }
+.consultancy-telemetry-heading > svg { color: var(--consultancy-amber); }
+.consultancy-telemetry-heading small { display: flex; align-items: center; gap: 5px; margin-left: auto; color: #71d5a5; font-size: 7px; }
+.consultancy-telemetry-heading small i { width: 5px; height: 5px; border-radius: 50%; background: var(--consultancy-green); }
+.consultancy-telemetry > div:not(.consultancy-telemetry-heading) { display: flex; justify-content: space-between; gap: 10px; padding: 9px 0; color: #b7c1c9; border-bottom: 1px solid #27313b; font-size: 8px; }
+.consultancy-telemetry > div strong { color: #8addb3; font-size: 8px; font-weight: 600; text-align: right; }
+.consultancy-cert-note { display: flex; gap: 8px; margin: 0; padding: 11px 14px; color: #909da8; background: #0e151d; font-size: 8px; line-height: 1.55; }
+.consultancy-cert-note svg { flex: 0 0 auto; color: var(--consultancy-amber); }
+
+.consultancy-track-record { display: grid; grid-template-columns: repeat(4, 1fr); padding: 23px 8%; border-top: 1px solid #303b45; border-bottom: 1px solid #303b45; background: #121a23; }
+.consultancy-track-record > div { display: grid; gap: 5px; padding: 2px 18px; border-right: 1px solid #303b45; }
+.consultancy-track-record > div:last-child { border: 0; }
+.consultancy-track-record strong { color: #f0f3f5; font: 700 clamp(23px, 3vw, 34px)/1 "Manrope", sans-serif; letter-spacing: -1px; }
+.consultancy-track-record strong span { color: var(--consultancy-amber); font-size: .62em; }
+.consultancy-track-record small { color: #8d99a4; font-size: 7px; letter-spacing: .7px; line-height: 1.6; }
+
+.consultancy-practices,
+.consultancy-testimonials,
+.consultancy-locations { max-width: 1440px; margin: 0 auto; padding: 76px 6%; }
+.consultancy-section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 25px; margin-bottom: 26px; }
+.consultancy-eyebrow > span { color: var(--consultancy-amber); }
+.consultancy-section-heading h2,
+.consultancy-roadmap-heading h2,
+.consultancy-integration h2,
+.consultancy-intake h2 { margin: 13px 0 8px; font: 650 clamp(29px, 3.2vw, 41px)/1.15 "Manrope", sans-serif; letter-spacing: -1.5px; }
+.consultancy-section-heading > div > p:last-child,
+.consultancy-roadmap-heading > p:last-child { max-width: 600px; margin: 0; color: #9ca8b3; font-size: 10px; line-height: 1.75; }
+.consultancy-ministry-badge { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 7px; padding: 9px 10px; color: #a0d8bd; border: 1px solid #2d5848; background: #12231d; font-size: 7px; font-weight: 700; letter-spacing: .45px; }
+.consultancy-ministry-badge svg { color: #69c995; }
+.consultancy-practice-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.consultancy-practice-card { display: flex; min-height: 275px; flex-direction: column; padding: 16px; border: 1px solid #2d3843; background: linear-gradient(145deg, #151e28, #10171f); }
+.consultancy-practice-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.consultancy-practice-top > span { color: #697783; font-size: 8px; }
+.consultancy-practice-top > small { padding: 5px 6px; color: #e8bd72; border: 1px solid #584524; background: #2b2419; font-size: 7px; font-weight: 700; letter-spacing: .5px; }
+.consultancy-practice-card h3 { margin: 14px 0 7px; font: 600 13px "Manrope", sans-serif; }
+.consultancy-practice-card > p { min-height: 47px; margin: 0; color: #a1acb6; font-size: 9px; line-height: 1.65; }
+.consultancy-practice-card ul { display: grid; gap: 7px; margin: 13px 0; padding: 0; list-style: none; }
+.consultancy-practice-card li { display: flex; align-items: flex-start; gap: 6px; color: #b8c2ca; font-size: 8px; line-height: 1.45; }
+.consultancy-practice-card li svg { flex: 0 0 auto; margin-top: 1px; color: #6fce9c; }
+.consultancy-practice-bottom { display: flex; align-items: center; justify-content: space-between; gap: 7px; margin-top: auto; padding-top: 11px; border-top: 1px solid #2b3540; }
+.consultancy-practice-bottom > span { display: inline-flex; align-items: center; gap: 5px; color: #9da8b2; font-size: 8px; white-space: nowrap; }
+.consultancy-practice-bottom > span svg { color: var(--consultancy-amber); }
+.consultancy-practice-bottom button { display: inline-flex; align-items: center; gap: 5px; padding: 0; color: var(--consultancy-amber); border: 0; background: transparent; font-size: 8px; font-weight: 700; cursor: pointer; }
+.consultancy-practice-bottom button:hover { color: #ffc04a; }
+
+.consultancy-roadmap { padding: 66px 7%; border-top: 1px solid #293440; border-bottom: 1px solid #293440; background: #111922; }
+.consultancy-roadmap-heading { max-width: 760px; margin: 0 auto 29px; text-align: center; }
+.consultancy-roadmap-heading > .consultancy-eyebrow { justify-content: center; }
+.consultancy-roadmap-heading > p:last-child { margin: auto; }
+.consultancy-roadmap-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 1190px; gap: 12px; margin: 0 auto; }
+.consultancy-roadmap-grid article { position: relative; min-height: 185px; padding: 16px; border: 1px solid #2e3a45; background: #0e151d; }
+.consultancy-roadmap-number { display: grid; width: 32px; height: 32px; place-items: center; color: var(--consultancy-amber); border: 1px solid #574423; background: #292317; font: 700 10px "Manrope", sans-serif; }
+.consultancy-roadmap-line { position: absolute; top: 32px; right: -13px; width: 13px; height: 1px; background: #64707a; }
+.consultancy-roadmap-grid article:last-child .consultancy-roadmap-line { display: none; }
+.consultancy-roadmap-grid h3 { margin: 17px 0 7px; font: 600 12px "Manrope", sans-serif; }
+.consultancy-roadmap-grid p { min-height: 55px; margin: 0 0 13px; color: #9aa6b1; font-size: 8px; line-height: 1.65; }
+.consultancy-roadmap-grid article > small { color: #e9bd73; font-size: 7px; font-weight: 700; letter-spacing: .35px; }
+
+.consultancy-integration { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center; gap: 7%; max-width: 1440px; margin: auto; padding: 75px 7%; }
+.consultancy-gallery { position: relative; display: grid; height: 345px; grid-template-columns: 1.15fr .85fr; grid-template-rows: 1fr 1fr; gap: 8px; }
+.consultancy-gallery img { min-width: 0; min-height: 0; border: 1px solid #394550; filter: saturate(.58) brightness(.78); }
+.consultancy-gallery .consultancy-gallery-large { grid-row: 1 / 3; }
+.consultancy-gallery > span { position: absolute; right: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 7px 8px; color: #d9e0e5; border: 1px solid #44515d; background: #0b1118e8; font-size: 7px; letter-spacing: .7px; }
+.consultancy-gallery > span i { width: 6px; height: 6px; border-radius: 50%; background: var(--consultancy-green); }
+.consultancy-integration-copy > p:not(.consultancy-eyebrow) { color: #a3aeb8; font-size: 10px; line-height: 1.8; }
+.consultancy-proof-list { margin-top: 20px; }
+.consultancy-proof-list article { display: flex; align-items: flex-start; gap: 11px; padding: 12px 0; border-top: 1px solid #2a3540; }
+.consultancy-proof-list article > span { color: var(--consultancy-amber); font-size: 8px; }
+.consultancy-proof-list article > div { flex: 1; }
+.consultancy-proof-list h3 { margin: 0 0 4px; font-size: 9px; letter-spacing: .4px; }
+.consultancy-proof-list p { margin: 0; color: #96a2ad; font-size: 8px; line-height: 1.6; }
+.consultancy-proof-list article > svg { flex: 0 0 auto; color: var(--consultancy-green); }
+
+.consultancy-testimonials { background: #0e151d; }
+.consultancy-testimonials .consultancy-section-heading { margin-bottom: 23px; }
+.consultancy-testimonial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.consultancy-testimonial-grid blockquote { margin: 0; padding: 17px; border: 1px solid #2d3843; background: #121a23; }
+.consultancy-quote-mark { height: 23px; color: var(--consultancy-amber); font: 39px/.9 Georgia, serif; }
+.consultancy-testimonial-grid blockquote > p { min-height: 92px; margin: 8px 0 17px; color: #d7dfe5; font: 500 11px/1.7 "Manrope", sans-serif; }
+.consultancy-testimonial-grid footer { display: flex; align-items: center; gap: 9px; padding-top: 12px; border-top: 1px solid #2d3843; }
+.consultancy-testimonial-grid footer > span { display: grid; width: 30px; height: 30px; flex: 0 0 auto; place-items: center; color: #f4d18c; border-radius: 50%; background: #453722; font-size: 8px; font-weight: 700; }
+.consultancy-testimonial-grid footer > div { display: grid; flex: 1; gap: 3px; }
+.consultancy-testimonial-grid footer strong { font-size: 8px; }
+.consultancy-testimonial-grid footer small { color: #8e9ba6; font-size: 7px; }
+.consultancy-testimonial-grid footer > svg { color: #67c992; }
+
+.consultancy-intake { display: grid; grid-template-columns: minmax(230px, .78fr) minmax(0, 1.22fr); align-items: start; gap: 6%; padding: 72px 7%; border-top: 1px solid #2a3540; background: #111922; scroll-margin-top: 90px; }
+.consultancy-intake-copy { position: sticky; top: 105px; }
+.consultancy-intake h2 { font-size: clamp(26px, 2.8vw, 36px); }
+.consultancy-intake-copy > p:not(.consultancy-eyebrow) { color: #a2adb7; font-size: 10px; line-height: 1.8; }
+.consultancy-intake-copy ul { display: grid; gap: 13px; margin: 21px 0; padding: 0; list-style: none; }
+.consultancy-intake-copy li { display: flex; align-items: flex-start; gap: 9px; }
+.consultancy-intake-copy li > svg { flex: 0 0 auto; margin-top: 1px; color: var(--consultancy-amber); }
+.consultancy-intake-copy li > span { display: grid; gap: 4px; }
+.consultancy-intake-copy li strong { font-size: 9px; }
+.consultancy-intake-copy li small { color: #929eaa; font-size: 8px; line-height: 1.5; }
+.consultancy-intake-contact { display: flex; align-items: center; gap: 10px; padding: 12px; border: 1px solid #34404b; background: #0d141b; }
+.consultancy-intake-contact > svg { color: var(--consultancy-amber); }
+.consultancy-intake-contact > span { display: grid; gap: 4px; }
+.consultancy-intake-contact small { color: #919da8; font-size: 7px; letter-spacing: .45px; }
+.consultancy-intake-contact a { color: #f4be5c; font-size: 12px; font-weight: 700; }
+.consultancy-form { min-width: 0; padding: 19px; border: 1px solid #34404b; background: #0e151d; }
+.consultancy-form-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 16px; padding-bottom: 13px; border-bottom: 1px solid #2b3640; }
+.consultancy-form-heading h3 { margin: 0 0 5px; font: 600 13px "Manrope", sans-serif; }
+.consultancy-form-heading p { margin: 0; color: #939faa; font-size: 8px; }
+.consultancy-form-heading > span { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 5px; padding: 5px 6px; color: #8be0b8; border: 1px solid #28533f; background: #10241b; font-size: 6px; font-weight: 700; letter-spacing: .35px; }
+.consultancy-form-heading > span i { width: 5px; height: 5px; border-radius: 50%; background: var(--consultancy-green); }
+.consultancy-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; }
+.consultancy-form-grid label { display: grid; min-width: 0; gap: 6px; color: #c6cfd6; font-size: 8px; font-weight: 600; }
+.consultancy-form-grid input:not([type="file"]),
+.consultancy-form-grid select,
+.consultancy-form-grid textarea { width: 100%; min-width: 0; min-height: 36px; padding: 8px 9px; color: #e5eaee; border: 1px solid #34404b; border-radius: 0; outline: 0; background: #0a1117; font-size: 8px; font-weight: 400; }
+.consultancy-form-grid textarea { min-height: 74px; resize: vertical; }
+.consultancy-form-grid input::placeholder,
+.consultancy-form-grid textarea::placeholder { color: #74818d; }
+.consultancy-form-grid input:focus,
+.consultancy-form-grid select:focus,
+.consultancy-form-grid textarea:focus { border-color: #d89213; }
+.consultancy-form-grid select { color-scheme: dark; }
+.consultancy-form-wide { grid-column: 1 / -1; }
+.consultancy-upload { position: relative; justify-items: center; padding: 14px; color: #aab5bf !important; border: 1px dashed #53616d; background: #101820; text-align: center; cursor: pointer; }
+.consultancy-upload > svg { color: var(--consultancy-amber); }
+.consultancy-upload > strong { color: #e2e7eb; font-size: 8px; }
+.consultancy-upload > strong span { color: #8c98a3; font-weight: 400; }
+.consultancy-upload > small { color: #8e9aa5; font-size: 7px; line-height: 1.5; }
+.consultancy-upload input[type="file"] { width: min(100%, 290px); color: #9da8b2; font-size: 8px; }
+.consultancy-submit { margin-top: 14px; }
+.consultancy-form-privacy { display: flex; align-items: flex-start; gap: 6px; margin: 9px 0 0; color: #8a97a2; font-size: 7px; line-height: 1.5; }
+.consultancy-form-privacy svg { flex: 0 0 auto; color: #70ce9e; }
+.consultancy-form-error { margin: 0 0 12px; padding: 8px; color: #ffc1b4; border: 1px solid #704238; background: #321c18; font-size: 9px; }
+.consultancy-form-success { display: grid; justify-items: center; gap: 9px; padding: 34px 14px; text-align: center; }
+.consultancy-form-success > svg { color: #5ed294; }
+.consultancy-form-success h3 { margin: 0; font: 600 16px "Manrope", sans-serif; }
+.consultancy-form-success p { max-width: 380px; margin: 0; color: #a4b0ba; font-size: 9px; line-height: 1.7; }
+.consultancy-form-success button { margin-top: 6px; padding: 8px 10px; color: #101316; border: 0; background: var(--consultancy-amber); font-size: 8px; font-weight: 700; cursor: pointer; }
+
+.consultancy-locations { padding-top: 70px; }
+.consultancy-locations .consultancy-section-heading { margin-bottom: 22px; }
+.consultancy-location-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.consultancy-location-grid article { padding: 14px; border: 1px solid #2d3843; background: #121a23; }
+.consultancy-location-icon { display: grid; width: 31px; height: 31px; margin-bottom: 11px; place-items: center; color: var(--consultancy-amber); border: 1px solid #534220; background: #292317; }
+.consultancy-location-grid article > small { color: #9aabb7; font-size: 7px; letter-spacing: .55px; }
+.consultancy-location-grid h3 { margin: 7px 0 5px; font: 600 10px "Manrope", sans-serif; }
+.consultancy-location-grid p { min-height: 28px; margin: 0 0 12px; color: #98a4af; font-size: 8px; line-height: 1.55; }
+.consultancy-location-status { display: flex; align-items: center; gap: 6px; color: #8fd7b4; font-size: 7px; font-weight: 700; letter-spacing: .5px; }
+.consultancy-location-status i { width: 5px; height: 5px; }
+.consultancy-map { position: relative; height: 265px; margin-top: 13px; overflow: hidden; border: 1px solid #34404b; background-color: #111c25; background-image: radial-gradient(#34414b 1px, transparent 1px); background-size: 22px 22px; }
+.consultancy-map-grid { position: absolute; inset: -20%; opacity: .46; background-image: linear-gradient(31deg, transparent 48%, #30404a 49%, #30404a 50%, transparent 51%), linear-gradient(117deg, transparent 47%, #283842 48%, #283842 49%, transparent 50%); background-size: 90px 70px, 125px 95px; transform: rotate(-7deg); }
+.consultancy-map-road { position: absolute; height: 7px; border: 1px solid #4d594f; border-right: 0; border-left: 0; background: #263331; transform-origin: left center; }
+.consultancy-map-road-one { top: 47%; left: -3%; width: 109%; transform: rotate(-11deg); }
+.consultancy-map-road-two { top: 75%; left: 16%; width: 92%; transform: rotate(-34deg); }
+.consultancy-map-road-three { top: 16%; left: 55%; width: 69%; transform: rotate(65deg); }
+.consultancy-map-label { position: absolute; color: #87969e; font-size: 7px; letter-spacing: 1px; }
+.consultancy-map-label-one { top: 31%; left: 35%; transform: rotate(-11deg); }
+.consultancy-map-label-two { right: 16%; bottom: 25%; }
+.consultancy-map-label-three { top: 17%; left: 14%; }
+.consultancy-map-pin { position: absolute; top: 42%; left: 53%; display: grid; width: 34px; height: 34px; place-items: center; color: #111; border: 3px solid #ffd47c; border-radius: 50% 50% 50% 4px; background: var(--consultancy-amber); box-shadow: 0 0 0 8px #f59e0b24; transform: rotate(-45deg); }
+.consultancy-map-pin svg { transform: rotate(45deg); }
+.consultancy-map-card { position: absolute; right: 14px; bottom: 14px; display: grid; gap: 5px; min-width: 185px; padding: 10px; border: 1px solid #43505b; background: #0b1118ed; }
+.consultancy-map-card > span { display: flex; align-items: center; gap: 6px; color: #8ee0b8; font-size: 7px; letter-spacing: .45px; }
+.consultancy-map-card > span i { width: 5px; height: 5px; border-radius: 50%; background: var(--consultancy-green); }
+.consultancy-map-card > strong { font-size: 10px; }
+.consultancy-map-card > small { color: #87939e; font-size: 7px; }
+
+.consultancy-urgent { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 7%; border-top: 1px solid #57431f; background: linear-gradient(100deg, #211d15, #141a1d); }
+.consultancy-urgent h2 { margin: 7px 0 4px; font: 600 17px "Manrope", sans-serif; }
+.consultancy-urgent > div > p:last-child { margin: 0; color: #aab4bc; font-size: 9px; }
+.consultancy-urgent > a { display: inline-flex; align-items: center; gap: 8px; color: #f1c16d; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.consultancy-urgent > a svg { color: var(--consultancy-amber); }
+.consultancy-urgent .consultancy-button { flex: 0 0 auto; }
+
+@media (min-width: 1500px) {
+  .consultancy-hero { padding-right: 7%; padding-left: 7%; }
+  .consultancy-practices, .consultancy-testimonials, .consultancy-locations { padding-right: 7%; padding-left: 7%; }
+}
+@media (max-width: 1050px) {
+  .consultancy-hero { grid-template-columns: minmax(0, 1fr) minmax(310px, .8fr); gap: 30px; padding-right: 4%; padding-left: 4%; }
+  .consultancy-practices, .consultancy-testimonials, .consultancy-locations { padding-right: 4%; padding-left: 4%; }
+  .consultancy-practice-card { padding: 13px; }
+  .consultancy-practice-card h3 { font-size: 11px; }
+  .consultancy-practice-bottom { align-items: flex-start; flex-direction: column; }
+  .consultancy-integration { gap: 4%; padding-right: 5%; padding-left: 5%; }
+  .consultancy-intake { gap: 4%; padding-right: 5%; padding-left: 5%; }
+}
+@media (max-width: 760px) {
+  .consultancy-hero { grid-template-columns: 1fr; min-height: 0; gap: 28px; padding: 39px 20px 34px; }
+  .consultancy-hero h1 { max-width: 650px; font-size: clamp(35px, 8vw, 49px); letter-spacing: -1.7px; }
+  .consultancy-hero-description { font-size: 10px; }
+  .consultancy-field-unit { max-width: 560px; }
+  .consultancy-track-record { grid-template-columns: repeat(2, 1fr); gap: 15px 0; padding: 18px 12px; }
+  .consultancy-track-record > div { padding: 4px 16px; }
+  .consultancy-track-record > div:nth-child(2) { border-right: 0; }
+  .consultancy-track-record > div:nth-child(3) { border-top: 1px solid #303b45; padding-top: 14px; }
+  .consultancy-track-record > div:nth-child(4) { border-top: 1px solid #303b45; padding-top: 14px; }
+  .consultancy-practices, .consultancy-testimonials, .consultancy-locations { padding: 52px 20px; }
+  .consultancy-section-heading { align-items: flex-start; flex-direction: column; gap: 13px; }
+  .consultancy-section-heading h2, .consultancy-roadmap-heading h2 { font-size: 31px; }
+  .consultancy-practice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .consultancy-practice-card { min-height: 285px; }
+  .consultancy-practice-bottom { align-items: center; flex-direction: row; }
+  .consultancy-ministry-badge { font-size: 7px; }
+  .consultancy-roadmap { padding: 50px 20px; }
+  .consultancy-roadmap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .consultancy-roadmap-line { display: none; }
+  .consultancy-integration { grid-template-columns: 1fr; gap: 25px; padding: 52px 20px; }
+  .consultancy-gallery { height: 310px; }
+  .consultancy-testimonial-grid { grid-template-columns: 1fr; }
+  .consultancy-testimonial-grid blockquote > p { min-height: 0; }
+  .consultancy-intake { grid-template-columns: 1fr; gap: 25px; padding: 52px 20px; }
+  .consultancy-intake-copy { position: static; }
+  .consultancy-location-grid { grid-template-columns: 1fr 1fr; }
+  .consultancy-urgent { flex-wrap: wrap; padding: 20px; }
+}
+@media (max-width: 480px) {
+  .consultancy-hero { padding: 32px 16px 27px; }
+  .consultancy-accreditation { align-items: flex-start; font-size: 7px; line-height: 1.5; }
+  .consultancy-hero-actions { align-items: stretch; flex-direction: column; }
+  .consultancy-button { min-height: 41px; }
+  .consultancy-trust-stats { gap: 13px; }
+  .consultancy-trust-stats > div { gap: 6px; }
+  .consultancy-trust-stats small { font-size: 6px; }
+  .consultancy-field-photo { height: 170px; }
+  .consultancy-telemetry > div:not(.consultancy-telemetry-heading) { font-size: 7px; }
+  .consultancy-track-record > div { padding-right: 9px; padding-left: 9px; }
+  .consultancy-track-record strong { font-size: 26px; }
+  .consultancy-practices, .consultancy-testimonials, .consultancy-locations { padding-right: 16px; padding-left: 16px; }
+  .consultancy-practice-grid, .consultancy-roadmap-grid, .consultancy-location-grid { grid-template-columns: 1fr; }
+  .consultancy-practice-card { min-height: 0; }
+  .consultancy-practice-card > p { min-height: 0; }
+  .consultancy-practice-bottom { margin-top: 8px; }
+  .consultancy-roadmap, .consultancy-integration, .consultancy-intake { padding-right: 16px; padding-left: 16px; }
+  .consultancy-roadmap-grid article { min-height: 160px; }
+  .consultancy-gallery { height: 260px; gap: 5px; }
+  .consultancy-form { padding: 13px; }
+  .consultancy-form-grid { grid-template-columns: 1fr; }
+  .consultancy-form-wide { grid-column: auto; }
+  .consultancy-form-heading { align-items: flex-start; flex-direction: column; }
+  .consultancy-map { height: 225px; }
+  .consultancy-map-card { right: 8px; bottom: 8px; min-width: 155px; }
+  .consultancy-map-label-one { left: 22%; }
+  .consultancy-map-pin { left: 46%; }
+  .consultancy-urgent { align-items: flex-start; flex-direction: column; }
+  .consultancy-urgent > a { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consultancy-page *,
+  .consultancy-page *::before,
+  .consultancy-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

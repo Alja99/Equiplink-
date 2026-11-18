@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #edf1f4;
+  background: #0b1118;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; background: #0b1118; }
+button, input, select, textarea { font: inherit; }
+a { color: inherit; text-decoration: none; }
+
+.app-shell { min-height: 100vh; color: #edf1f4; background: #0b1118; }
+.app-header { position: sticky; z-index: 20; top: 0; display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 25px; padding: 0 5.5%; border-bottom: 1px solid #293441; background: #0b1118ed; backdrop-filter: blur(12px); }
+.app-logo { display: inline-flex; align-items: center; gap: 10px; }
+.app-logo-mark { display: grid; width: 34px; height: 34px; place-items: center; color: #0b1118; border-radius: 8px; background: #f5a623; }
+.app-logo-copy { display: grid; gap: 4px; }
+.app-logo-copy strong { font: 800 17px/1 "Manrope", sans-serif; letter-spacing: -.5px; }
+.app-logo-copy strong span { color: #f5a623; }
+.app-logo-copy small { color: #8794a0; font-size: 7px; font-weight: 700; letter-spacing: 1px; }
+.app-nav { display: flex; align-items: center; gap: clamp(12px, 2vw, 25px); }
+.app-nav a { color: #a9b3be; font-size: 10px; white-space: nowrap; }
+.app-nav a:hover, .app-nav a[aria-current="page"] { color: #f5a623; }
+.app-nav-cta { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 12px; color: #101316 !important; background: #f5a623; font-size: 9px !important; font-weight: 700; }
+.app-menu { display: none; width: 36px; height: 36px; place-items: center; color: #edf1f4; border: 1px solid #394550; background: transparent; }
+.app-main { min-height: 58vh; }
+.app-content { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 70px 0; }
+.app-eyebrow { color: #f5a623; font-size: 9px; font-weight: 700; letter-spacing: 1.2px; }
+.app-content h1 { margin: 12px 0; font: 700 clamp(32px, 5vw, 54px)/1.12 "Manrope", sans-serif; letter-spacing: -1.7px; }
+.app-content h2 { font: 700 23px "Manrope", sans-serif; }
+.app-content > p:not(.app-eyebrow) { max-width: 650px; color: #a2adb7; font-size: 13px; line-height: 1.75; }
+.app-about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; }
+.app-about-grid article { padding: 20px; border: 1px solid #2e3a45; background: #121a23; }
+.app-about-grid svg { color: #f5a623; }
+.app-about-grid h2 { margin: 14px 0 8px; font-size: 15px; }
+.app-about-grid p { margin: 0; color: #9da8b2; font-size: 11px; line-height: 1.7; }
+.app-footer { padding: 32px 5.5% 15px; border-top: 1px solid #293441; background: #080d12; }
+.app-footer-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 23px; }
+.app-footer-links { display: flex; flex-wrap: wrap; gap: 18px; color: #a1acb6; font-size: 10px; }
+.app-footer-links a:hover { color: #f5a623; }
+.app-footer-bottom { display: flex; justify-content: space-between; padding-top: 13px; color: #7f8b96; border-top: 1px solid #293441; font-size: 8px; }
+.app-form-panel { max-width: 760px; padding: 22px; border: 1px solid #303b46; background: #121a23; }
+.app-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.app-form-grid label { display: grid; gap: 6px; color: #c0c9d0; font-size: 10px; font-weight: 600; }
+.app-form-grid input, .app-form-grid select, .app-form-grid textarea { width: 100%; min-height: 38px; padding: 9px; color: #e8edf1; border: 1px solid #36424d; background: #0c131a; font-size: 10px; }
+.app-form-grid textarea { resize: vertical; }
+.app-form-wide { grid-column: 1 / -1; }
+.app-form-submit { display: inline-flex; align-items: center; gap: 8px; min-height: 39px; margin-top: 15px; padding: 0 13px; color: #101316; border: 0; background: #f5a623; font-size: 10px; font-weight: 700; cursor: pointer; }
+.app-form-message { color: #81d6a8; font-size: 11px; }
+.app-form-error { color: #ff9a87; font-size: 10px; }
+.app-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+.app-detail img { width: 100%; max-height: 410px; object-fit: cover; border: 1px solid #35414b; }
+.app-detail-specs { display: flex; flex-wrap: wrap; gap: 8px; margin: 17px 0; }
+.app-detail-specs span { padding: 7px 9px; color: #b7c1ca; border: 1px solid #34404b; font-size: 9px; }
+.app-not-found { min-height: 60vh; }
+.app-legacy-shell .el-site > .el-utility,
+.app-legacy-shell .el-site > .el-header,
+.app-legacy-shell .el-site > .el-footer { display: none; }
+.app-legacy-shell .el-site { min-height: auto; }
+.app-button { display: inline-flex; min-height: 38px; align-items: center; justify-content: center; gap: 8px; padding: 0 12px; border: 1px solid transparent; font-size: 10px; font-weight: 700; }
+.app-button-primary { color: #101316; background: #f5a623; }
+.app-button-secondary { color: #edf1f4; border-color: #394550; background: #121a23; }
+.app-section-title { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 24px 0; }
+.app-section-title h2 { margin: 10px 0; font: 700 clamp(24px, 3vw, 35px)/1.2 "Manrope", sans-serif; }
+.app-section-description { max-width: 650px; color: #a2adb7; font-size: 12px; line-height: 1.7; }
+.app-service-card { display: flex; flex-direction: column; min-height: 190px; padding: 19px; border: 1px solid #2e3a45; background: #121a23; }
+.app-service-icon { display: grid; width: 36px; height: 36px; place-items: center; color: #f5a623; border: 1px solid #584524; background: #292317; }
+.app-service-card h3 { margin: 15px 0 6px; font: 600 14px "Manrope", sans-serif; }
+.app-service-card > p { margin: 0; color: #9da8b2; font-size: 10px; line-height: 1.6; }
+.app-service-card > a { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 15px; color: #f5a623; font-size: 9px; font-weight: 600; }
+.app-contact-cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 20px auto 55px; padding: 22px; width: min(1120px, calc(100% - 48px)); border: 1px solid #5b4827; background: #171a1a; }
+.app-contact-cta h2 { margin: 0 0 5px; font: 600 18px "Manrope", sans-serif; }
+.app-contact-cta p { margin: 0; color: #a2adb7; font-size: 10px; }
+.app-contact-details { padding: 20px; border: 1px solid #303b46; background: #121a23; }
+.app-contact-details p { display: flex; align-items: center; gap: 9px; color: #aab4be; font-size: 10px; }
+.app-contact-details svg { color: #f5a623; }
+.app-partner-form { padding-top: 0; }
+.app-back-link { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 20px; color: #f5a623; font-size: 10px; }
+.app-detail-form { width: 100%; padding: 35px 0 0; }
+.app-detail-form .app-form-panel { margin-top: 16px; }
+.app-detail > div > p > svg { vertical-align: middle; color: #f5a623; }
+.app-detail > div > h2 small { color: #9aa6b2; font: 400 10px "DM Sans", sans-serif; }
+
+@media (max-width: 900px) {
+  .app-header { padding: 0 20px; }
+  .app-menu { display: grid; margin-left: auto; }
+  .app-nav { position: absolute; top: 71px; right: 0; left: 0; display: none; align-items: stretch; flex-direction: column; gap: 0; padding: 8px 20px 14px; border-bottom: 1px solid #293441; background: #0b1118; }
+  .app-nav.app-nav-open { display: flex; }
+  .app-nav a { padding: 11px 0; border-bottom: 1px solid #202b35; }
+  .app-nav-cta { justify-content: center; margin-top: 8px; }
+}
+@media (max-width: 600px) {
+  .app-content { width: min(100% - 32px, 1120px); padding: 48px 0; }
+  .app-about-grid, .app-detail { grid-template-columns: 1fr; }
+  .app-section-title { width: min(100% - 32px, 1120px); }
+  .app-form-grid { grid-template-columns: 1fr; }
+  .app-form-wide { grid-column: auto; }
+  .app-footer-top, .app-footer-bottom { align-items: flex-start; flex-direction: column; }
+  .app-contact-cta { width: calc(100% - 32px); align-items: flex-start; flex-direction: column; }
+}
