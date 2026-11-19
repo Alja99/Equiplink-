@@ -16,6 +16,7 @@ import {
   UserRound,
 } from "lucide-react";
 import { MainLayout } from "../../components/layout/MainLayout.jsx";
+import { companyContact } from "../../data/company.js";
 import {
   getSubmissionErrorMessage,
   submitConsultancyRequest,
@@ -30,7 +31,7 @@ const practices = [
     badge: "CLASS A & B",
     description: "Full-cycle administration for expatriate executive quotas, heavy machinery operators and civil engineering directors.",
     deliverables: ["Class A (Executive) & Class B (Technical) filings", "Expatriate quota authorization petitions", "Ministry of Labour clearance certificates", "Annual renewal alerts & fast-track audits"],
-    timeline: "7 - 14 Days",
+    
     action: "Request permit",
   },
   {
@@ -39,7 +40,7 @@ const practices = [
     badge: "LIS REGISTRATION",
     description: "Navigate Liberia Immigration Service biometric enrollment with dedicated officer accompaniment.",
     deliverables: ["LIS biometric capture scheduling & escort", "Alien Registration Card issuance & delivery", "Spouse & dependent residency packages", "Re-entry permit management for rotational staff"],
-    timeline: "5 - 10 Days",
+    
     action: "Request permit",
   },
   {
@@ -48,7 +49,7 @@ const practices = [
     badge: "ROB PROTOCOL",
     description: "Rapid pre-clearance letters and airport arrival protocol for incoming specialists and senior delegations.",
     deliverables: ["LIS-endorsed pre-entry approval authority letter", "Roberts International Airport meet & greet", "Corporate guarantee letters & vetting", "Emergency same-day dispatch available"],
-    timeline: "24 - 72 Hours",
+   
     action: "Apply for VoA",
   },
   {
@@ -57,7 +58,7 @@ const practices = [
     badge: "LBR & LRA",
     description: "End-to-end statutory formation of Liberian corporations, branches, LLCs and specialized joint ventures.",
     deliverables: ["Liberia Business Registry Articles filing", "Tax Identification Number from the LRA", "NASSCORP & Social Security registration", "Commercial bank account introduction"],
-    timeline: "5 - 10 Days",
+  
     action: "Start incorporation",
   },
   {
@@ -66,7 +67,7 @@ const practices = [
     badge: "MFA & NOTARY",
     description: "Official notarization and diplomatic legalization for international contracts, powers of attorney and credentials.",
     deliverables: ["Ministry of Foreign Affairs authentication", "Certified French, Chinese & Arabic translations", "Notary Public attestation & sealing", "Apostille coordination for foreign jurisdictions"],
-    timeline: "3 - 7 Days",
+
     action: "Legalize documents",
   },
   {
@@ -290,7 +291,7 @@ function ConsultancyPage() {
         <section className="consultancy-intake" id="consultancy-intake">
           <div className="consultancy-intake-copy"><p className="consultancy-eyebrow"><span>05</span> MANDATE INTAKE DESK</p><h2>Schedule a consultation or <em>request permit support.</em></h2><p>Provide details regarding your organization, incoming personnel or business registration needs. An EquipLink compliance officer will review your enquiry and respond within four business hours.</p>
             <ul><li><UserRound size={15} /><span><strong>Dedicated officer assigned</strong><small>A local point of contact for your case.</small></span></li><li><BadgeCheck size={15} /><span><strong>Clear invoicing</strong><small>USD &amp; LRD options, with applicable documentation.</small></span></li><li><LockKeyhole size={15} /><span><strong>Confidential case handling</strong><small>Submitted information is used to follow up on your enquiry.</small></span></li></ul>
-            <div className="consultancy-intake-contact"><Phone size={16} /><span><small>URGENT CASE? CALL OUR MONROVIA DESK</small><a href="tel:+231770000000">+231 77 000 0000</a></span></div>
+            <div className="consultancy-intake-contact"><Phone size={16} /><span><small>URGENT CASE? CALL EQUIPLINK</small><a href={companyContact.phones[0].href}>{companyContact.phones[0].label}</a></span></div>
           </div>
           <form className="consultancy-form" onSubmit={submitEnquiry}>
             <div className="consultancy-form-heading"><div><h3>Consultancy &amp; permit enquiry</h3><p>Fields marked * are required.</p></div><span><i /> SECURE INTAKE</span></div>
@@ -324,7 +325,7 @@ function ConsultancyPage() {
           <div className="consultancy-map"><div className="consultancy-map-grid" /><div className="consultancy-map-road consultancy-map-road-one" /><div className="consultancy-map-road consultancy-map-road-two" /><div className="consultancy-map-road consultancy-map-road-three" /><span className="consultancy-map-label consultancy-map-label-one">TUBMAN BLVD</span><span className="consultancy-map-label consultancy-map-label-two">CONGO TOWN</span><span className="consultancy-map-label consultancy-map-label-three">MONROVIA</span><i className="consultancy-map-pin"><MapPin size={16} /></i><div className="consultancy-map-card"><span><i /> EQUIPLINK LIAISON CORRIDOR</span><strong>6.3156° N, 10.8074° W</strong><small>MONROVIA · LIBERIA</small></div></div>
         </section>
 
-        <section className="consultancy-urgent"><div><p className="consultancy-eyebrow">URGENT REGULATORY SUPPORT</p><h2>Need urgent VoA or work authorization?</h2><p>Speak directly with an executive regulatory consultant in Monrovia today.</p></div><a href="tel:+231770000000"><Phone size={16} /> +231 77 000 0000</a><button type="button" className="consultancy-button consultancy-button-amber" onClick={scrollToIntake}>Request fast track <ArrowRight size={15} /></button></section>
+        <section className="consultancy-urgent"><div><p className="consultancy-eyebrow">URGENT REGULATORY SUPPORT</p><h2>Need urgent VoA or work authorization?</h2><p>Speak directly with an EquipLink consultant today.</p></div><a href={companyContact.phones[0].href}><Phone size={16} /> {companyContact.phones[0].label}</a><button type="button" className="consultancy-button consultancy-button-amber" onClick={scrollToIntake}>Request fast track <ArrowRight size={15} /></button></section>
       </div>
     </MainLayout>
   );

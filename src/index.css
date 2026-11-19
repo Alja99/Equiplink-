@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   color: #edf1f4;
   background: #0b1118;
   font-synthesis: none;
@@ -10,19 +10,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.app-shell *, .el-site *, .el-admin *, .consultancy-page *, .procurement-page * {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif !important;
+}
+
 * { box-sizing: border-box; }
 body { min-width: 320px; min-height: 100vh; margin: 0; background: #0b1118; }
 button, input, select, textarea { font: inherit; }
 a { color: inherit; text-decoration: none; }
 
 .app-shell { min-height: 100vh; color: #edf1f4; background: #0b1118; }
-.app-header { position: sticky; z-index: 20; top: 0; display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 25px; padding: 0 5.5%; border-bottom: 1px solid #293441; background: #0b1118ed; backdrop-filter: blur(12px); }
-.app-logo { display: inline-flex; align-items: center; gap: 10px; }
-.app-logo-mark { display: grid; width: 34px; height: 34px; place-items: center; color: #0b1118; border-radius: 8px; background: #f5a623; }
-.app-logo-copy { display: grid; gap: 4px; }
-.app-logo-copy strong { font: 800 17px/1 "Manrope", sans-serif; letter-spacing: -.5px; }
-.app-logo-copy strong span { color: #f5a623; }
-.app-logo-copy small { color: #8794a0; font-size: 7px; font-weight: 700; letter-spacing: 1px; }
+.app-header { --app-header-height: 150px; position: sticky; z-index: 20; top: 0; display: flex; min-height: var(--app-header-height); align-items: center; justify-content: space-between; gap: 25px; padding: 0 5.5%; border-bottom: 1px solid #293441; background: #0b1118ed; backdrop-filter: blur(12px); }
+.app-logo { display: inline-flex; flex: 0 0 auto; align-items: center; }
+.app-logo-artwork { display: flex; width: clamp(118px, 11vw, 145px); flex-direction: column; align-items: center; gap: clamp(7px, .5vw, 8px); }
+.app-logo-symbol { display: block; width: 77.4%; height: auto; }
+.app-logo-wordmark { display: block; width: 100%; height: auto; }
 .app-nav { display: flex; align-items: center; gap: clamp(12px, 2vw, 25px); }
 .app-nav a { color: #a9b3be; font-size: 10px; white-space: nowrap; }
 .app-nav a:hover, .app-nav a[aria-current="page"] { color: #f5a623; }
@@ -39,11 +41,28 @@ a { color: inherit; text-decoration: none; }
 .app-about-grid svg { color: #f5a623; }
 .app-about-grid h2 { margin: 14px 0 8px; font-size: 15px; }
 .app-about-grid p { margin: 0; color: #9da8b2; font-size: 11px; line-height: 1.7; }
+.app-team-section { padding-top: 20px; }
+.app-team-heading { margin-bottom: 20px; }
+.app-team-heading h2 { margin: 0; font: 700 clamp(24px, 3vw, 32px)/1.2 "Inter", sans-serif; }
+.app-team-grid { display: grid; max-width: 860px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.app-team-card { overflow: hidden; border: 1px solid #2e3a45; background: #121a23; }
+.app-team-portrait { position: relative; display: grid; min-height: 240px; aspect-ratio: 1; place-items: center; color: #bdc8d1; background: linear-gradient(145deg, #263a4d, #17232e); }
+.app-team-portrait-image { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.app-team-initials { font-size: 46px; font-weight: 700; letter-spacing: 2px; }
+.app-team-photo-note { position: absolute; right: 12px; bottom: 12px; color: #c1cbd4; font-size: 11px; }
+.app-team-info { padding: 18px; }
+.app-team-info h3 { margin: 0; font-size: 18px; font-weight: 700; }
+.app-team-role { margin: 6px 0 10px; color: #f5a623; font-size: 13px; font-weight: 600; }
+.app-team-info > p:last-child { margin: 0; color: #a2adb7; font-size: 14px; line-height: 1.65; }
 .app-footer { padding: 32px 5.5% 15px; border-top: 1px solid #293441; background: #080d12; }
 .app-footer-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 23px; }
 .app-footer-links { display: flex; flex-wrap: wrap; gap: 18px; color: #a1acb6; font-size: 10px; }
 .app-footer-links a:hover { color: #f5a623; }
-.app-footer-bottom { display: flex; justify-content: space-between; padding-top: 13px; color: #7f8b96; border-top: 1px solid #293441; font-size: 8px; }
+.app-footer-bottom { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 10px 24px; padding-top: 13px; color: #7f8b96; border-top: 1px solid #293441; font-size: 11px; }
+.app-footer-contact { display: flex; flex: 1; flex-wrap: wrap; justify-content: flex-end; gap: 6px 12px; }
+.app-footer-contact a { color: inherit; }
+.app-footer-contact a:hover { color: #f5a623; }
+.app-contact-phone-list { display: flex; flex-direction: column; gap: 5px; }
 .app-form-panel { max-width: 760px; padding: 22px; border: 1px solid #303b46; background: #121a23; }
 .app-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
 .app-form-grid label { display: grid; gap: 6px; color: #c0c9d0; font-size: 10px; font-weight: 600; }
@@ -87,9 +106,9 @@ a { color: inherit; text-decoration: none; }
 .app-detail > div > h2 small { color: #9aa6b2; font: 400 10px "DM Sans", sans-serif; }
 
 @media (max-width: 900px) {
-  .app-header { padding: 0 20px; }
+  .app-header { --app-header-height: 120px; padding: 0 20px; }
   .app-menu { display: grid; margin-left: auto; }
-  .app-nav { position: absolute; top: 71px; right: 0; left: 0; display: none; align-items: stretch; flex-direction: column; gap: 0; padding: 8px 20px 14px; border-bottom: 1px solid #293441; background: #0b1118; }
+  .app-nav { position: absolute; top: var(--app-header-height); right: 0; left: 0; display: none; align-items: stretch; flex-direction: column; gap: 0; padding: 8px 20px 14px; border-bottom: 1px solid #293441; background: #0b1118; }
   .app-nav.app-nav-open { display: flex; }
   .app-nav a { padding: 11px 0; border-bottom: 1px solid #202b35; }
   .app-nav-cta { justify-content: center; margin-top: 8px; }
@@ -97,6 +116,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 600px) {
   .app-content { width: min(100% - 32px, 1120px); padding: 48px 0; }
   .app-about-grid, .app-detail { grid-template-columns: 1fr; }
+  .app-team-grid { grid-template-columns: 1fr; }
   .app-section-title { width: min(100% - 32px, 1120px); }
   .app-form-grid { grid-template-columns: 1fr; }
   .app-form-wide { grid-column: auto; }

@@ -12,6 +12,7 @@ import {
   FileCheck2,
   Fuel,
   Gauge,
+  Globe,
   HardHat,
   Headphones,
   Mail,
@@ -25,6 +26,7 @@ import {
   Truck,
   X,
 } from "lucide-react";
+import { companyContact } from "./data/company.js";
 import {
   AdminPage,
   ConsultancyPage,
@@ -332,8 +334,8 @@ function LegacyMarketplace() {
       <div className="utility-bar">
         <div className="page-container utility-inner">
           <div className="utility-details">
-            <a href="tel:+231770000000"><Phone size={13} /> +231 77 000 0000</a>
-            <span><MapPin size={13} /> Monrovia, Liberia</span>
+            <a href={companyContact.phones[0].href}><Phone size={13} /> {companyContact.phones[0].label}</a>
+            <span><MapPin size={13} /> {companyContact.address}</span>
             <span><Clock3 size={13} /> Mon–Sat: 08:00–18:00 GMT</span>
           </div>
           <span className="dispatch-status"><i /> Dispatch operational</span>
@@ -539,15 +541,15 @@ function LegacyMarketplace() {
 
         <section className="section-block faq-section">
           <div className="page-container faq-layout">
-            <div className="faq-copy"><p className="eyebrow"><span className="section-index">06</span> Frequently asked questions</p><h2>Need to know<br /><em>before you go?</em></h2><p>Can’t find the answer? Our Monrovia dispatch team is ready to help with your project requirements.</p><a className="text-link" href="mailto:hello@equiplink.com">Ask our team <ArrowUpRight size={15} /></a></div>
+            <div className="faq-copy"><p className="eyebrow"><span className="section-index">06</span> Frequently asked questions</p><h2>Need to know<br /><em>before you go?</em></h2><p>Can’t find the answer? Our EquipLink dispatch team is ready to help with your project requirements.</p><a className="text-link" href={companyContact.emailHref}>Ask our team <ArrowUpRight size={15} /></a></div>
             <div className="faq-list">{faqs.map((faq, index) => <details className="faq-item" key={faq.question} open={index === 0}><summary><span>{faq.question}</span><ChevronDown size={17} /></summary><p>{faq.answer}</p></details>)}</div>
           </div>
         </section>
 
         <section id="dispatch" className="dispatch-section">
           <div className="page-container dispatch-inner">
-            <div className="dispatch-copy"><p className="eyebrow"><span className="live-pulse" /> Priority dispatch desk</p><h2>Real people.<br /><em>Ready to help.</em></h2><p>Tell us what your project needs. Our local team will help route your request to the right people.</p>{resourceMessage && <p className="resource-message dispatch-resource-message" role="status">{resourceMessage}</p>}<a className="button button-amber" href="tel:+231770000000"><Phone size={16} /> Open priority dispatch ticket <ArrowRight size={16} /></a></div>
-            <div className="dispatch-contact-card"><div className="contact-card-heading"><span>MONROVIA OPERATIONS</span><span>EL / DISPATCH DESK</span></div><a href="tel:+231770000000"><span className="contact-card-icon"><Phone size={18} /></span><span><small>DIRECT PHONE HOTLINE</small><strong>+231 77 000 0000</strong><em>Mon–Sat · 08:00–18:00 GMT</em></span><ArrowUpRight size={16} /></a><a href="mailto:hello@equiplink.com"><span className="contact-card-icon"><Mail size={18} /></span><span><small>CORPORATE EMAIL</small><strong>hello@equiplink.com</strong><em>General &amp; project inquiries</em></span><ArrowUpRight size={16} /></a><div className="dispatch-address"><span className="contact-card-icon"><MapPin size={18} /></span><span><small>PHYSICAL OPERATIONS</small><strong>Freeport Industrial Strip</strong><em>Bushrod Island, Monrovia, Liberia</em></span></div><div className="contact-card-foot"><span><Compass size={14} /> LOCAL KNOWLEDGE. PRACTICAL SUPPORT.</span><span className="dispatch-live"><i /> LIVE</span></div></div>
+            <div className="dispatch-copy"><p className="eyebrow"><span className="live-pulse" /> Priority dispatch desk</p><h2>Real people.<br /><em>Ready to help.</em></h2><p>Tell us what your project needs. Our local team will help route your request to the right people.</p>{resourceMessage && <p className="resource-message dispatch-resource-message" role="status">{resourceMessage}</p>}<a className="button button-amber" href={companyContact.phones[0].href}><Phone size={16} /> Call EquipLink <ArrowRight size={16} /></a></div>
+            <div className="dispatch-contact-card"><div className="contact-card-heading"><span>EQUIPLINK CONTACTS</span><span>DISPATCH DESK</span></div>{companyContact.phones.map((phone) => <a key={phone.href} href={phone.href}><span className="contact-card-icon"><Phone size={18} /></span><span><small>DIRECT PHONE</small><strong>{phone.label}</strong><em>Mon–Sat · 08:00–18:00 GMT</em></span><ArrowUpRight size={16} /></a>)}<a href={companyContact.emailHref}><span className="contact-card-icon"><Mail size={18} /></span><span><small>CORPORATE EMAIL</small><strong>{companyContact.email}</strong><em>General &amp; project inquiries</em></span><ArrowUpRight size={16} /></a><a href={companyContact.websiteHref}><span className="contact-card-icon"><Globe size={18} /></span><span><small>WEBSITE</small><strong>{companyContact.website}</strong></span><ArrowUpRight size={16} /></a><div className="dispatch-address"><span className="contact-card-icon"><MapPin size={18} /></span><span><small>BUSINESS ADDRESS</small><strong>{companyContact.address}</strong></span></div><div className="contact-card-foot"><span><Compass size={14} /> LOCAL KNOWLEDGE. PRACTICAL SUPPORT.</span><span className="dispatch-live"><i /> LIVE</span></div></div>
           </div>
         </section>
 
@@ -556,10 +558,10 @@ function LegacyMarketplace() {
 
       <footer className="site-footer">
         <div className="page-container footer-main">
-          <div className="footer-brand"><Logo footer /><p>Liberia’s premier network for heavy machinery rental, corporate mobility, business consultancy, and industrial procurement. Registered in Monrovia, Liberia.</p><form className="newsletter-form" onSubmit={submitNewsletter}><label htmlFor="newsletter">Stay informed</label><div><input id="newsletter" name="email" type="email" placeholder="corporate.email@domain.com" required /><button type="submit" aria-label="Subscribe"><ArrowRight size={17} /></button></div>{newsletterMessage && <span className="newsletter-message" role="status">{newsletterMessage}</span>}</form></div>
+          <div className="footer-brand"><Logo footer /><p>Liberia’s premier network for heavy machinery rental, corporate mobility, business consultancy, and industrial procurement. Based at {companyContact.address}.</p><form className="newsletter-form" onSubmit={submitNewsletter}><label htmlFor="newsletter">Stay informed</label><div><input id="newsletter" name="email" type="email" placeholder="corporate.email@domain.com" required /><button type="submit" aria-label="Subscribe"><ArrowRight size={17} /></button></div>{newsletterMessage && <span className="newsletter-message" role="status">{newsletterMessage}</span>}</form></div>
           <div className="footer-column"><h3>Equipment fleet</h3><a href="#inventory">Excavators &amp; earthmovers</a><a href="#inventory">Haulers &amp; tipper trucks</a><a href="#inventory">Bulldozers &amp; loaders</a><a href="#inventory">Lowbeds &amp; flatbeds</a><a href="#inventory">Car &amp; SUV fleet rental</a></div>
           <div className="footer-column"><h3>Business consultancy</h3><a href="#services">Work &amp; residence permits</a><a href="#services">Visa-on-Arrival</a><a href="#services">Business registration &amp; tax</a><a href="#services">Regulatory concessions</a><a href="#services">Local content compliance</a></div>
-          <div className="footer-column footer-contact"><h3>Procurement &amp; contact</h3><a href="#services">Construction materials</a><a href="#services">Heavy machinery parts</a><a href="#services">Office &amp; industrial supplies</a><a href="#dispatch"><MapPin size={14} /> Freeport Industrial Strip, Monrovia</a><a href="tel:+231770000000"><Phone size={14} /> +231 77 000 0000</a><a href="mailto:hello@equiplink.com"><Mail size={14} /> hello@equiplink.com</a></div>
+          <div className="footer-column footer-contact"><h3>Procurement &amp; contact</h3><a href="#services">Construction materials</a><a href="#services">Heavy machinery parts</a><a href="#services">Office &amp; industrial supplies</a><a href="#dispatch"><MapPin size={14} /> {companyContact.address}</a>{companyContact.phones.map((phone) => <a key={phone.href} href={phone.href}><Phone size={14} /> {phone.label}</a>)}<a href={companyContact.emailHref}><Mail size={14} /> {companyContact.email}</a><a href={companyContact.websiteHref}><Globe size={14} /> {companyContact.website}</a></div>
         </div>
         <div className="page-container footer-bottom"><span>© 2025 EquipLink Liberia Inc. All rights reserved.</span><span className="footer-verified"><BadgeCheck size={15} /> Verified Gov/NGO supplier</span><div><a href="#dispatch">Privacy policy</a><a href="#dispatch">Terms of service</a><a href="#dispatch">Safety standards</a></div></div>
       </footer>

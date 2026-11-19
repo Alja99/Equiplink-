@@ -107,7 +107,7 @@ function AdminSignIn({ message, onSignedIn }) {
   return <div className="el-admin el-admin-auth-shell">
     <main className="el-admin-main el-admin-auth-main">
       <section className="el-admin-panel el-admin-auth-panel">
-        <a className="el-brand" href="/" aria-label="EquipLink home"><span className="el-brand-mark"><ArrowRight size={22} /></span><span><strong>Equip<span>Link</span></strong><small>OPERATIONS DESK</small></span></a>
+        <a className="el-brand" href="/" aria-label="EquipLink home"><span className="el-brand-artwork"><img className="el-brand-symbol" src="/images/equiplink-symbol.png" alt="" /><img className="el-brand-logo" src="/images/equiplink-wordmark.png" alt="" /></span><small>OPERATIONS DESK</small></a>
         <p className="el-eyebrow"><ShieldCheck size={14} /> STAFF ACCESS</p>
         <h1>Sign in to the request desk</h1>
         {message && <p className="el-admin-auth-message" role="status">{message}</p>}
@@ -277,7 +277,7 @@ function AdminPage() {
   const activeRequestAction = selected && nextAction(selected);
   return <div className="el-admin">
     <aside className={`el-admin-sidebar${adminMenuOpen ? " mobile-open" : ""}`}>
-      <a className="el-brand" href="/"><span className="el-brand-mark"><ArrowRight size={22} /></span><span><strong>Equip<span>Link</span></strong><small>OPERATIONS DESK</small></span></a>
+      <a className="el-brand" href="/" aria-label="EquipLink home"><span className="el-brand-artwork"><img className="el-brand-symbol" src="/images/equiplink-symbol.png" alt="" /><img className="el-brand-logo" src="/images/equiplink-wordmark.png" alt="" /></span><small>OPERATIONS DESK</small></a>
       <div className="el-admin-workspace"><span>EL</span><div><strong>EquipLink Operations</strong><small>{session.user.email}</small></div><ChevronDown size={14} /></div>
       <p className="el-admin-label">WORKSPACE</p>
       {viewOptions.map(([label, Icon]) => <button key={label} className={`el-admin-nav${view === label ? " active" : ""}`} onClick={() => { setView(label); setAdminMenuOpen(false); }}><Icon size={17} />{label}{label === "Requests" && pending > 0 && <span>{pending}</span>}</button>)}

@@ -26,6 +26,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { MainLayout } from "../../components/layout/MainLayout.jsx";
+import { companyContact } from "../../data/company.js";
 import {
   getSubmissionErrorMessage,
   submitProcurementRequest,
@@ -232,7 +233,7 @@ function ProcurementPage() {
       "- Indicative pricing, currency, Incoterms and payment terms",
       "- Warranty, after-sales support and logistics capabilities",
       "",
-      "Submit your supplier profile to rfq@equiplink.com. Supplier review and any tender award are subject to verification and project-specific requirements.",
+      `Submit your supplier profile to ${companyContact.email}. Supplier review and any tender award are subject to verification and project-specific requirements.`,
     ].join("\n");
     const link = document.createElement("a");
     const url = URL.createObjectURL(new Blob([content], { type: "text/plain;charset=utf-8" }));
@@ -246,8 +247,8 @@ function ProcurementPage() {
     <MainLayout>
       <div className="procurement-page">
         <div className="procurement-utility">
-          <a href="tel:+231770000000"><Phone size={12} /> +231 77 000 0000</a>
-          <span><MapPin size={12} /> Monrovia, Liberia · Mon–Sat: 08:00–18:00 GMT</span>
+          <a href={companyContact.phones[0].href}><Phone size={12} /> {companyContact.phones[0].label}</a>
+          <span><MapPin size={12} /> {companyContact.address} · Mon–Sat: 08:00–18:00 GMT</span>
           <span className="procurement-dispatch"><i /> DISPATCH OPERATIONAL</span>
         </div>
 
@@ -326,7 +327,7 @@ function ProcurementPage() {
               <li><PackageCheck size={16} /><span><strong>Clear logistics breakdown</strong><small>Confirm applicable duties, handling and delivery costs before proceeding.</small></span></li>
             </ul>
             <div className="procurement-contact-card">
-              <Headphones size={18} /><div><small>DIRECT PROCUREMENT HOTLINE</small><a href="tel:+231770000000">+231 77 000 0000</a><a href="mailto:rfq@equiplink.com">rfq@equiplink.com</a><span>Freeport Yard Desk · Monrovia, Liberia</span></div>
+              <Headphones size={18} /><div><small>DIRECT PROCUREMENT HOTLINE</small>{companyContact.phones.map((phone) => <a key={phone.href} href={phone.href}>{phone.label}</a>)}<a href={companyContact.emailHref}>{companyContact.email}</a><a href={companyContact.websiteHref}>{companyContact.website}</a><span>{companyContact.address}</span></div>
             </div>
             <p className="procurement-file-formats"><FileText size={14} /> BOQ formats: PDF · XLSX · CSV · DWG</p>
           </div>
@@ -378,7 +379,7 @@ function ProcurementPage() {
         <section className="procurement-partner">
           <div><p className="procurement-eyebrow"><span>05</span> SUPPLIER NETWORK</p><h2>Are you an accredited manufacturer or <em>wholesaler?</em></h2><p>Introduce your company for consideration on infrastructure and industrial supply opportunities. Supplier verification and project terms are agreed before any order is placed.</p>
             <div className="procurement-partner-pillars"><span><ShieldCheck size={15} /> Escrow-protected terms by agreement</span><span><Container size={15} /> Port warehousing options</span><span><FileCheck2 size={15} /> Corporate tender coordination</span></div>
-            <div className="procurement-partner-actions"><a className="procurement-button procurement-button-amber" href="mailto:rfq@equiplink.com?subject=Verified%20Supplier%20Application">Apply as Verified Supplier <ArrowRight size={15} /></a><button type="button" className="procurement-button procurement-button-outline" onClick={downloadSupplierGuidelines}><ArrowDownToLine size={15} /> Download Supplier Guidelines</button></div>
+            <div className="procurement-partner-actions"><a className="procurement-button procurement-button-amber" href={`${companyContact.emailHref}?subject=Verified%20Supplier%20Application`}>Apply as Verified Supplier <ArrowRight size={15} /></a><button type="button" className="procurement-button procurement-button-outline" onClick={downloadSupplierGuidelines}><ArrowDownToLine size={15} /> Download Supplier Guidelines</button></div>
           </div>
           <div className="procurement-partner-stamp"><BadgeCheck size={25} /><strong>Supplier<br />verification</strong><small>PROJECT-BY-PROJECT REVIEW</small></div>
         </section>

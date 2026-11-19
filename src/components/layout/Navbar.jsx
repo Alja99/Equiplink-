@@ -8,8 +8,10 @@ export default function Navbar() {
   return (
     <header className="app-header">
       <NavLink className="app-logo" to="/" aria-label="EquipLink home" onClick={() => setMenuOpen(false)}>
-        <span className="app-logo-mark"><ArrowRight size={21} /></span>
-        <span className="app-logo-copy"><strong>Equip<span>Link</span></strong><small>HEAVY LOGISTICS &amp; TRADE</small></span>
+        <span className="app-logo-artwork">
+          <img className="app-logo-symbol" src="/images/equiplink-symbol.png" alt="" />
+          <img className="app-logo-wordmark" src="/images/equiplink-wordmark.png" alt="" />
+        </span>
       </NavLink>
       <button className="app-menu" type="button" aria-label="Toggle navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
         {menuOpen ? <X size={20} /> : <Menu size={20} />}
